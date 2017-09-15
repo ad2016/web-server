@@ -2,8 +2,10 @@
 
 const express = require('express');
 var fs = require('fs');
-
 const hbs = require('hbs');
+
+//process.env is an object that contains all the environment variables key value pair
+const port = process.env.PORT || 3000;  //sets default value as env doesnt work for local
 
 var app = express();
 // In order to create an app , all we have to do is to call the express() method.
@@ -89,6 +91,6 @@ app.get('/bad', (req,res)=> {
 
 
 
-app.listen(3000, () => {
-    console.log('Server is up in port 3000');
+app.listen(port, () => {
+    console.log(`Server is up in port ${port}`);
 });
