@@ -55,7 +55,7 @@ hbs.registerHelper('getCurrentYear',()=>{
 app.get('/', (req,res)=> {
 
     res.render('home.hbs',{
-        homeTitle:'Home Page',
+        pageTitle:'Home Page',
         welcomeMessage:'Welcome to our website',
         currentYear : new Date().getFullYear()
     });
@@ -88,7 +88,14 @@ app.get('/bad', (req,res)=> {
 });
 
 
+app.get('/projects', (req,res) =>{
 
+    res.render('project.hbs',{
+
+        pageTitle : 'Projects'
+    });
+
+});
 
 
 app.listen(port, () => {
